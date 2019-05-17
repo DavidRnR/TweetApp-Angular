@@ -1,0 +1,14 @@
+<h1> Tweet-App</h1>
+<mat-card>
+  <section *ngIf="!spinner" class="tweet-writer-container">
+    <mat-form-field>
+      <textarea matInput placeholder="Write something..." [(ngModel)]="tweetForm" rows="5"></textarea>
+    </mat-form-field>
+    <section class="tweet-writer-action">
+      <button mat-raised-button color="primary" (click)="saveTweet()">Send</button>
+    </section>
+  </section>
+  <div *ngIf="spinner" class="spinner-container">
+      <mat-spinner [diameter]="30"></mat-spinner>
+  </div>
+</mat-card>

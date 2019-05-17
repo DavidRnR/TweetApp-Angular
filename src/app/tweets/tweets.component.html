@@ -1,0 +1,9 @@
+<tweet-new (newTweet)="onNewTeet($event)"></tweet-new>
+
+<ng-container *ngIf="!spinners.tweets">
+    <tweet *ngFor="let tweet of tweets" [tweet]="tweet" (remove)="removeTweet($event)"></tweet>
+</ng-container>
+
+<div *ngIf="spinners.tweets" class="spinner-container">
+  <mat-spinner [diameter]="30"></mat-spinner>
+</div>

@@ -1,0 +1,10 @@
+<div class="tweet-edit-container">
+  <mat-form-field>
+    <textarea matInput maxlength="140" [(ngModel)]="tweet.tweet">{{tweet.tweet}}</textarea>
+  </mat-form-field>
+  <section class="tweet-edit-action">
+    <button mat-mini-fab color="primary" type="submit" (click)="onEditTweet()">
+      <mat-icon title="Save Edited Tweet">check</mat-icon>
+    </button>
+  </section>
+</div>

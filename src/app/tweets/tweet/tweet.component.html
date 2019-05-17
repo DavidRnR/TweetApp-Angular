@@ -1,0 +1,19 @@
+<mat-card  class="tweet-card">
+    <div *ngIf="!tweet.edit" class="tweet-container">
+        <section class="tweet-container-body">
+          <p>{{ tweet.tweet }}</p>
+        </section>
+        <section class="tweet-container-actions">
+          <button mat-mini-fab color="secondary" (click)="onEditTweet()">
+            <mat-icon title="Edit Tweet">edit</mat-icon>
+          </button>
+          <div class="remove-button-container">
+            <button *ngIf="!spinner" mat-mini-fab color="warn" (click)="onRemoveTweet()">
+              <mat-icon title="Delete Tweet">delete</mat-icon>
+            </button>
+            <mat-spinner *ngIf="spinner" [diameter]="20"></mat-spinner>
+          </div>
+        </section>
+      </div>
+    <tweet-edit *ngIf="tweet.edit" [tweet]="tweet"></tweet-edit>
+</mat-card>
